@@ -1,7 +1,10 @@
 FROM node:14
 WORKDIR /app
 COPY package*.json ./
-COPY main.js ./
 RUN npm install
-EXPOSE 3000 3001 3003 3004
+ENV MULT=true \ 
+ADD=true \
+PORT=8080
+COPY . .
+EXPOSE 8080
 CMD ["node", "main.js"]
