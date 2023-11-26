@@ -1,10 +1,6 @@
 FROM node:14
-WORKDIR /app
-COPY package*.json ./
-COPY . /app
-ENV TASKS=4 \ 
-PORT=3000
-RUN npm install
 COPY . .
+RUN npm i
+ENV TASKS=10
 EXPOSE 3000
-CMD ["node", "main.js"]
+CMD [ "node", "main.js" ]
