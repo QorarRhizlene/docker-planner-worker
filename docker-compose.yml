@@ -5,7 +5,7 @@ services:
  planner:
     build:
       context: ./planner
-      dockerfile: DockerFile_planner
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     restart: always
@@ -17,7 +17,7 @@ services:
  worker:
     build:
       context: ./worker
-      dockerfile: Dockerfile_worker
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     networks:
@@ -28,4 +28,4 @@ networks:
     external: true
 
 #docker network create planner-worker
-#docker network ls
+#docker network lsdocker-compose up --build

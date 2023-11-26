@@ -1,6 +1,7 @@
 FROM node:14
 WORKDIR /app
 COPY package*.json ./
+COPY . /app
 ENV TASKS=4 \ 
 PORT=3000
 RUN npm install
